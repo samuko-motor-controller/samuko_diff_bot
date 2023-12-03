@@ -7,6 +7,7 @@
     <xacro:include filename="other_parts/drive_wheel_rim_macro.xacro"/>
 
     <xacro:include filename="sensors/sonar.xacro"/>
+    <xacro:include filename="sensors/imu.xacro"/>
 
     <xacro:property name="chassis_length" value="0.25"/>
     <xacro:property name="chassis_width" value="0.19"/>
@@ -181,5 +182,11 @@
         mass="0.005"
         min_range="0.02" max_range="3.0"
         resolution="0.01" visualize="false"/>
+
+    <!--  imu -->
+    <xacro:insert_imu
+        base_name="imu" 
+        parent_name="chassis" 
+        x="0" y="0" z="${chassis_height}"/>
 
 </robot>
